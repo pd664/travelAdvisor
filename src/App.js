@@ -28,9 +28,10 @@ const App = () => {
 
   useEffect(() => {
     const filtered = places.filter((place) => Number(place.rating) > rating);
-
+  
     setFilteredPlaces(filtered);
-  }, [rating]);
+  }, [rating, places]);  // Add 'places' to the dependency array
+  
 
   useEffect(() => {
     if (bounds) {
